@@ -27,8 +27,8 @@ function App() {
   }, []);
 
   return (
-    <main className={darkMode ? 'dark' : 'light'}>
-      <div className='main-container'>
+    <div className={darkMode ? 'dark' : 'light'}>
+      <div className='body-container'>
         <header className={darkMode && scrolled ? 'darkScrolled' : (!darkMode && scrolled ? 'lightScrolled' : '')}>
           <div className='logoName'>
             <ArrowSquareUpRight color='rgb(57, 71, 196)' size={28} weight="fill" />
@@ -36,9 +36,13 @@ function App() {
           </div>
           <List className={`listIcon ${menuClick ? 'iconRotation' : ''}`} onClick={handleMenuClick} size={30} />
         </header>
+        <main className={menuClick ? 'main-blur' : ''}>
+
+        </main>
         <Menu menuClick={menuClick} />
       </div>
-    </main>
+      <footer></footer>
+    </div>
   )
 };
 

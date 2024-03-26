@@ -5,11 +5,13 @@ body {
   height: 100vh;
 }
 
-.main-container {
+.body-container {
   height: 100svh;
   color: var(--slate-12);
   background-color: var(--slate-2);
-  background-image: radial-gradient(circle at center -100%, rgb(57, 71, 196) 0%, rgba(255, 255, 255, 0) 70%);
+  background-position-y: -500px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(ellipse at center, rgb(57, 71, 196, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
   display: flex;
   flex-direction: column;
   padding: 15px;
@@ -52,11 +54,12 @@ header {
   position: fixed;
   top: 52px;
   left: -100%;
-  width: 100svw;
+  width: calc(100svw - 52px);
   height: 100svh;
   background-color: var(--slate-3);
   padding: 10px;
   transition: all 0.5s ease-in-out;
+  border-right: 1px solid var(--slate-7);
 }
 
 .menu.active {
@@ -69,4 +72,12 @@ header {
 
 .iconRotation {
   transform: rotate(90deg);
+}
+
+.main-blur {
+  backdrop-filter: blur(3px);
+}
+
+footer {
+  height: 100px;
 }
