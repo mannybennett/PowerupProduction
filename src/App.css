@@ -1,8 +1,72 @@
-@import '@radix-ui/colors/gray.css';
-@import '@radix-ui/colors/red.css';
-@import '@radix-ui/colors/gray-dark.css';
-@import '@radix-ui/colors/red-dark.css';
+@import '@radix-ui/colors/slate.css';
+@import '@radix-ui/colors/slate-dark.css';
 
 body {
   height: 100vh;
+}
+
+.main-container {
+  height: 100svh;
+  color: var(--slate-12);
+  background-color: var(--slate-2);
+  background-image: radial-gradient(circle at center -100%, rgb(57, 71, 196) 0%, rgba(255, 255, 255, 0) 70%);
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+header {
+  height: 52px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid var(--slate-3);
+  background-color: rgba(33,34,37, 0);
+  transition: background-color 0.2s ease-in-out;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoName {
+  display: flex;
+  align-items: center;
+  font-size: 9px;
+}
+
+.darkScrolled {
+  border-bottom: 1px solid var(--slate-7);
+  background-color: rgba(33,34,37, 0.8);
+  backdrop-filter: blur(3px);
+}
+
+.lightScrolled {
+  border-bottom: 1px solid var(--slate-7);
+  background-color: rgba(240,240,243, 0.8);
+  backdrop-filter: blur(3px);
+}
+
+.menu {
+  position: fixed;
+  top: 52px;
+  left: -100%;
+  width: 100svw;
+  height: 100svh;
+  background-color: var(--slate-3);
+  padding: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.menu.active {
+  left: 0;
+}
+
+.listIcon {
+  transition: transform 0.5s ease-in-out;
+}
+
+.iconRotation {
+  transform: rotate(90deg);
 }
