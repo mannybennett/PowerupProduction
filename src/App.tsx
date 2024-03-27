@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import Menu from './components/Menu';
-import { ArrowSquareUpRight, List } from '@phosphor-icons/react';
+import Header from './components/Header';
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
@@ -29,17 +29,11 @@ function App() {
   return (
     <div className={darkMode ? 'dark' : 'light'}>
       <div className='body-container'>
-        <header className={darkMode && scrolled ? 'darkScrolled' : (!darkMode && scrolled ? 'lightScrolled' : '')}>
-          <div className='logoName'>
-            <ArrowSquareUpRight color='rgb(57, 71, 196)' size={28} weight="fill" />
-            <h1>PowerupProduction</h1>
-          </div>
-          <List className={`listIcon ${menuClick ? 'iconRotation' : ''}`} onClick={handleMenuClick} size={30} />
-        </header>
+        <Header darkMode={darkMode} scrolled={scrolled} menuClick={menuClick} handleMenuClick={handleMenuClick} />
+        <Menu menuClick={menuClick} />
         <main className={menuClick ? 'main-blur' : ''}>
 
         </main>
-        <Menu menuClick={menuClick} />
       </div>
       <footer></footer>
     </div>

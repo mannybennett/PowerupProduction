@@ -8,7 +8,7 @@ body {
 .body-container {
   height: 100svh;
   color: var(--slate-12);
-  background-color: var(--slate-2);
+  background-color: var(--slate-3);
   background-position-y: -500px;
   background-repeat: no-repeat;
   background-image: radial-gradient(ellipse at center, rgb(57, 71, 196, 0.5) 0%, rgba(255, 255, 255, 0) 70%);
@@ -35,7 +35,11 @@ header {
 .logoName {
   display: flex;
   align-items: center;
-  font-size: 9px;
+}
+
+h1 {
+  font-size: 18px;
+  margin-left: 2px;
 }
 
 .darkScrolled {
