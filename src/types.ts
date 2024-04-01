@@ -1,5 +1,8 @@
 export interface MenuProps {
   menuClick: boolean;
+  dropDown: boolean;
+  handleDropDown: () => void;
+  handleMenuClick: () => void;
 };
 
 export interface HeaderProps {
@@ -8,3 +11,8 @@ export interface HeaderProps {
   darkMode: boolean;
   handleMenuClick: () => void;
 };
+
+export interface Genre {
+  name: string;
+  Icon: any;
+}
