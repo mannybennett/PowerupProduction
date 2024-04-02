@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import Menu from './components/Menu';
 import Header from './components/Header';
+import { Genre } from './types';
 
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [menuClick, setMenuClick] = useState<boolean>(false);
   const [dropDown, setDropDown] = useState<boolean>(false);
+  const [genre, setGenre] = useState<Genre>('Action/Adventure');
 
   const handleDropDown = () : void => {
     setDropDown(!dropDown);
@@ -40,11 +42,9 @@ function App() {
   return (
     <div className={darkMode ? 'dark' : 'light'}>
       <div className='body-container'>
-        <Header darkMode={darkMode} scrolled={scrolled} menuClick={menuClick} handleMenuClick={handleMenuClick} />
-        <Menu menuClick={menuClick} dropDown={dropDown} handleMenuClick={handleMenuClick} handleDropDown={handleDropDown}/>
-        <main className={menuClick ? 'main-blur' : ''}>
-
-        </main>
+        <Header setDarkMode={setDarkMode} darkMode={darkMode} scrolled={scrolled} menuClick={menuClick} handleMenuClick={handleMenuClick} />
+        <Menu setDarkMode={setDarkMode} darkMode={darkMode} menuClick={menuClick} setGenre={setGenre} genre={genre} dropDown={dropDown} handleMenuClick={handleMenuClick} handleDropDown={handleDropDown}/>
+        <main className={menuClick ? 'main-blur' : ''}></main>
       </div>
     </div>
   );

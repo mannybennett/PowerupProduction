@@ -1,7 +1,7 @@
-import { MenuProps, Genre } from "../types";
+import { MenuProps, GenreIcon, Genre } from "../types";
 import { CaretDown, CaretUp, Sword, PuzzlePiece, Crown, CastleTurret, Ghost, PersonSimpleRun } from "@phosphor-icons/react";
 
-const genres: Genre[] = [
+const genres: GenreIcon[] = [
   { name: 'Action/Adventure', Icon: Sword },
   { name: 'Puzzle', Icon: PuzzlePiece },
   { name: 'RPGs', Icon: Crown },
@@ -10,7 +10,13 @@ const genres: Genre[] = [
   { name: 'Platformers', Icon: PersonSimpleRun },
 ];
 
-const Menu = ({menuClick, dropDown, handleDropDown, handleMenuClick} : MenuProps) => {
+const Menu = ({menuClick, dropDown, handleDropDown, handleMenuClick, setGenre} : MenuProps) => {
+  // on genre selection, set genre state to genre name and change menuClick state back to false
+  const handleSelection = (genre: Genre) => {
+    handleMenuClick();
+    setGenre(genre);
+  }
+
   return ( 
     <div className={`menu ${menuClick ? 'active' : ''}`}>
       <section className='nav-container'>
@@ -25,7 +31,7 @@ const Menu = ({menuClick, dropDown, handleDropDown, handleMenuClick} : MenuProps
           {!dropDown ? null : 
             <div className='genre-container'>
               {genres.map((genre) => (
-                <div onClick={handleMenuClick} className='genre' key={genre.name}>
+                <div onClick={()=>handleSelection(genre.name)} className='genre' key={genre.name}>
                   <div className='genre-icon'>
                     <genre.Icon size={19} />
                   </div>
