@@ -46,7 +46,9 @@ function App() {
       <div className='body-container'>
         <Header setDarkMode={setDarkMode} darkMode={darkMode} scrolled={scrolled} menuClick={menuClick} handleMenuClick={handleMenuClick} />
         <Menu setDarkMode={setDarkMode} darkMode={darkMode} menuClick={menuClick} setGenre={setGenre} genre={genre} dropDown={dropDown} handleMenuClick={handleMenuClick} handleDropDown={handleDropDown}/>
-        <main className={menuClick ? 'main-blur' : ''}></main>
+        <main className={menuClick ? 'main-blur' : ''}>
+
+        </main>
       </div>
     </div>
   );
