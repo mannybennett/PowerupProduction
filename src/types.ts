@@ -19,6 +19,10 @@ export interface HeaderProps {
   handleMenuClick: () => void;
 };
 
+export interface HomeProps {
+  menuClick: boolean;
+};
+
 export interface GenreIcon {
   name: Genre;
   Icon: any;

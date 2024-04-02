@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from "wouter";
 import './App.css';
+import { Genre } from './types';
 import Menu from './components/Menu';
 import Header from './components/Header';
-import { Genre } from './types';
+import Home from './components/Home';
+import About from './components/About';
+import Contact from './components/Contact';
 
 // 600px max width for mobile view
 
@@ -12,6 +16,18 @@ function App() {
   const [menuClick, setMenuClick] = useState<boolean>(false);
   const [dropDown, setDropDown] = useState<boolean>(false);
   const [genre, setGenre] = useState<Genre>('Action/Adventure');
+
+  const [location] = useLocation();
+
+  let page;
+
+  if (location === "/about") {
+    page = <About />;
+  } else if (location === "/contact") {
+    page = <Contact />;
+  } else {
+    page = <Home />;
+  }
 
   const handleDropDown = () : void => {
     setDropDown(!dropDown);
@@ -46,9 +62,10 @@ function App() {
       <div className='body-container'>
         <Header setDarkMode={setDarkMode} darkMode={darkMode} scrolled={scrolled} menuClick={menuClick} handleMenuClick={handleMenuClick} />
         <Menu setDarkMode={setDarkMode} darkMode={darkMode} menuClick={menuClick} setGenre={setGenre} genre={genre} dropDown={dropDown} handleMenuClick={handleMenuClick} handleDropDown={handleDropDown}/>
-        <main className={menuClick ? 'main-blur' : ''}>
-
+        <main onClick={handleMenuClick} className={menuClick ? 'main-blur' : ''}>
+          {page}
         </main>
+        <footer className={menuClick ? 'main-blur' : ''}></footer>
       </div>
     </div>
   );
