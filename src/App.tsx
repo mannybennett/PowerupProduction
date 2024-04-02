@@ -4,6 +4,8 @@ import Menu from './components/Menu';
 import Header from './components/Header';
 import { Genre } from './types';
 
+// 600px max width for mobile view
+
 function App() {
   const [darkMode, setDarkMode] = useState<boolean>(true);
   const [scrolled, setScrolled] = useState<boolean>(false);

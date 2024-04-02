@@ -6,7 +6,7 @@ const Header = ({menuClick, darkMode, scrolled, handleMenuClick} : HeaderProps) 
     <header className={darkMode && scrolled ? 'darkScrolled' : (!darkMode && scrolled ? 'lightScrolled' : '')}>
       <div className='logoName'>
         <ArrowSquareUpRight color='rgb(57, 71, 196)' size={28} weight="fill" />
-        <h1>PowerupProduction</h1>
+        <h1 className={`${!darkMode && 'black-font'}`}>PowerupProduction</h1>
       </div>
       <List className={`listIcon ${menuClick ? 'iconRotation' : ''}`} onClick={handleMenuClick} size={28} />
     </header>

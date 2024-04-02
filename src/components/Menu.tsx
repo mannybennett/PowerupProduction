@@ -1,5 +1,5 @@
 import { MenuProps, GenreIcon, Genre } from "../types";
-import { CaretDown, CaretUp, Sword, PuzzlePiece, Crown, CastleTurret, Ghost, PersonSimpleRun } from "@phosphor-icons/react";
+import { CaretDown, CaretUp, Sword, PuzzlePiece, Crown, CastleTurret, Ghost, PersonSimpleRun, GithubLogo } from "@phosphor-icons/react";
 
 const genres: GenreIcon[] = [
   { name: 'Action/Adventure', Icon: Sword },
@@ -10,12 +10,21 @@ const genres: GenreIcon[] = [
   { name: 'Platformers', Icon: PersonSimpleRun },
 ];
 
-const Menu = ({menuClick, dropDown, handleDropDown, handleMenuClick, setGenre} : MenuProps) => {
+const Menu = ({menuClick, dropDown, darkMode, handleDropDown, handleMenuClick, setGenre, setDarkMode} : MenuProps) => {
   // on genre selection, set genre state to genre name and change menuClick state back to false
-  const handleSelection = (genre: Genre) => {
+  const handleSelection = (genre: Genre) : void => {
     handleMenuClick();
     setGenre(genre);
-  }
+  };
+
+  const handleDarkMode = () : void => {
+    setDarkMode(!darkMode)
+  };
+
+  const handleGitHub = () : void => {
+    window.open('https://github.com/mannybennett/PowerupProduction', '_blank');
+  };
+  
 
   return ( 
     <div className={`menu ${menuClick ? 'active' : ''}`}>
@@ -49,7 +58,14 @@ const Menu = ({menuClick, dropDown, handleDropDown, handleMenuClick, setGenre} :
         </div>
       </section>
       <section className='nav-footer'>
-
+        <div className='button-container'>
+          <button onClick={handleDarkMode} className={`mode-button ${darkMode ? '' : 'selected-mode'}`}>Light</button>
+          <button onClick={handleDarkMode} className={`mode-button ${darkMode ? 'selected-mode' : ''}`}>Dark</button>
+        </div>
+        <button onClick={handleGitHub} className='github-button'>
+          <GithubLogo color={darkMode ? 'black' : 'rgb(240,240,243)'} size={16} />
+          <p id={darkMode ? '' : 'github-white'}>GitHub</p>
+        </button>
       </section>      
     </div>
   );
