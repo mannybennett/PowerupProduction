@@ -42,7 +42,8 @@ const Menu = ({menuClick, dropDown, darkMode, handleDropDown, handleMenuClick, s
           {!dropDown ? null : 
           <div className='genre-container'>
             {genres.map((genre) => (
-              <Link href={`/${genre.name.toLowerCase()}`}>
+              // Gets rid of the forward slash in action/adventure to omit url error
+              <Link href={`/${genre.name.replace('/', '').toLowerCase()}`}>
                 <div onClick={()=>handleSelection(genre.name)} className='genre' key={genre.name}>
                   <div className='genre-icon'>
                     <genre.Icon size={19} />
@@ -67,8 +68,8 @@ const Menu = ({menuClick, dropDown, darkMode, handleDropDown, handleMenuClick, s
       </section>
       <section className='nav-footer'>
         <div className='button-container'>
-          <button onClick={handleDarkMode} className={`mode-button ${darkMode ? '' : 'selected-mode'}`}>Light</button>
-          <button onClick={handleDarkMode} className={`mode-button ${darkMode ? 'selected-mode' : ''}`}>Dark</button>
+          <button onClick={() => {darkMode && handleDarkMode()}} className={`mode-button ${darkMode ? '' : 'selected-mode'}`}>Light</button>
+          <button onClick={() => {!darkMode && handleDarkMode()}} className={`mode-button ${darkMode ? 'selected-mode' : ''}`}>Dark</button>
         </div>
         <button onClick={handleGitHub} className='github-button'>
           <GithubLogo color={darkMode ? 'rgb(17,16,18)' : 'rgb(240,240,243)'} size={16} />

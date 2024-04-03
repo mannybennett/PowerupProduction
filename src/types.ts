@@ -23,6 +23,10 @@ export interface HomeProps {
   menuClick: boolean;
 };
 
+export interface GenreProps {
+  genre: Genre;
+};
+
 export interface GenreIcon {
   name: Genre;
   Icon: any;

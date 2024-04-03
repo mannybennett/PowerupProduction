@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Home from './components/Home';
 import About from './components/About';
 import Contact from './components/Contact';
+import Guide from './components/Guide';
 
 // 600px max width for mobile view
 
@@ -25,9 +26,11 @@ function App() {
     page = <About />;
   } else if (location === "/contact") {
     page = <Contact />;
+  } else if (location === `/${genre.replace('/', '').toLowerCase()}`) {
+    page = <Guide genre={genre} />
   } else {
     page = <Home />;
-  }
+  };
 
   const handleDropDown = () : void => {
     setDropDown(!dropDown);
@@ -62,7 +65,7 @@ function App() {
       <div className='body-container'>
         <Header setDarkMode={setDarkMode} darkMode={darkMode} scrolled={scrolled} menuClick={menuClick} handleMenuClick={handleMenuClick} />
         <Menu setDarkMode={setDarkMode} darkMode={darkMode} menuClick={menuClick} setGenre={setGenre} genre={genre} dropDown={dropDown} handleMenuClick={handleMenuClick} handleDropDown={handleDropDown}/>
-        <main onClick={handleMenuClick} className={menuClick ? 'main-blur' : ''}>
+        <main onClick={() => {menuClick && handleMenuClick()}} className={menuClick ? 'main-blur' : ''}>
           {page}
         </main>
         <footer className={menuClick ? 'main-blur' : ''}></footer>
