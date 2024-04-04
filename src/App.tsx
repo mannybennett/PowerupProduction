@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from "wouter";
-import './App.css';
+import { useLocation } from 'wouter';
+import './styles/App.css';
 import { Genre } from './types';
 import Menu from './components/Menu';
 import Header from './components/Header';
@@ -22,9 +22,9 @@ function App() {
 
   let page;
 
-  if (location === "/about") {
+  if (location === '/about') {
     page = <About />;
-  } else if (location === "/contact") {
+  } else if (location === '/contact') {
     page = <Contact />;
   } else if (location === `/${genre.replace('/', '').toLowerCase()}`) {
     page = <Guide genre={genre} />

@@ -1,6 +1,12 @@
 @import '@radix-ui/colors/slate.css';
 @import '@radix-ui/colors/slate-dark.css';
 
+:root {
+  --blue: rgb(62, 94, 222);
+  --lightblue: rgb(62, 126, 222);
+  --lightgrey: rgb(39, 42, 45);
+}
+
 body {
   height: 100vh;
 }
@@ -39,21 +45,22 @@ header {
 
 h1 {
   font-size: 18px;
+  font-weight: 600;
   margin-left: 2px;
 }
 
 .black-font {
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .darkScrolled {
-  border-bottom: 1px solid rgb(39, 42, 45);
+  border-bottom: 1px solid var(--lightgrey);
   background-color: rgba(33,34,37, 0.8);
   backdrop-filter: blur(3px);
 }
 
 .lightScrolled {
-  border-bottom: 1px solid rgb(39, 42, 45);
+  border-bottom: 1px solid var(--lightgrey);
   background-color: rgba(240,240,243, 0.8);
   backdrop-filter: blur(3px);
 }
@@ -68,11 +75,11 @@ a, a:active, a:focus, a:hover {
   top: 52px;
   left: -100%;
   width: calc(100vw - 52px);
-  height: calc(100vh - 52px);
+  height: calc(100svh - 52px);
   z-index: 1;
   background-color: var(--slate-3);
   transition: all 0.5s ease-in-out;
-  border-right: 1px solid rgb(39, 42, 45);
+  border-right: 1px solid var(--lightgrey);
   display: flex;
   flex-direction: column;
 }
@@ -116,7 +123,7 @@ a, a:active, a:focus, a:hover {
 
 .dropDown {
   padding-bottom: 0;
-  border-bottom: 1px solid rgb(39, 42, 45);
+  border-bottom: 1px solid var(--lightgrey);
 }
 
 .genre-caret {
@@ -142,7 +149,7 @@ a, a:active, a:focus, a:hover {
 }
 
 .genre:hover {
-  background-color: rgb(62, 94, 222);
+  background-color: var(--blue);
 }
 
 .genre-icon {
@@ -163,7 +170,7 @@ a, a:active, a:focus, a:hover {
 .nav-footer {
   height: 100px;
   width: 100%;
-  border-top: 1px solid rgb(39, 42, 45);
+  border-top: 1px solid var(--lightgrey);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,7 +183,7 @@ a, a:active, a:focus, a:hover {
 .button-container {
   height: 35px;
   width: 100%;
-  border: 1px solid rgb(39, 42, 45);
+  border: 1px solid var(--lightgrey);
   border-radius: 20px;
   display: flex;
   overflow: hidden;
@@ -189,7 +196,7 @@ a, a:active, a:focus, a:hover {
 }
 
 .selected-mode {
-  background-color: rgb(39, 42, 45);
+  background-color: var(--lightgrey);
   color: rgb(240,240,243);
 }
 
@@ -197,7 +204,7 @@ a, a:active, a:focus, a:hover {
   all: unset;
   height: 35px;
   width: 100%;
-  background-color: rgb(62, 94, 222);
+  background-color: var(--blue);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -208,7 +215,7 @@ a, a:active, a:focus, a:hover {
 }
 
 .github-button:active {
-  background-color: rgb(62, 126, 222);
+  background-color: var(--lightblue);
 }
 
 .github-button p {
@@ -219,9 +226,9 @@ a, a:active, a:focus, a:hover {
   font-weight: 400;
 }
 
-main {
+/* main {
   padding: 65px 15px 15px;
-}
+} */
 
 .main-blur {
   filter: blur(3px);
