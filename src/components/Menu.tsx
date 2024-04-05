@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { MenuProps, GenreIcon, Genre } from "../types";
 import { CaretDown, CaretUp, Sword, PuzzlePiece, Crown, CastleTurret, Ghost, PersonSimpleRun, GithubLogo } from "@phosphor-icons/react";
 import { Link } from 'wouter';
@@ -25,6 +26,23 @@ const Menu = ({menuClick, dropDown, darkMode, handleDropDown, handleMenuClick, s
   const handleGitHub = () : void => {
     window.open('https://github.com/mannybennett/PowerupProduction', '_blank');
   };
+
+  useEffect(() => {
+    const setViewportHeight = () => {
+      // calculate the viewport height and convert it to pixels
+      document.documentElement.style.setProperty('--vh', `${window.innerHeight}px`);
+    }
+    // listen to the resize event
+    window.addEventListener('resize', setViewportHeight);
+
+    // initial set up
+    setViewportHeight();
+
+    // Clean up event listener on unmount
+    return () => {
+      window.removeEventListener('resize', setViewportHeight);
+    }
+  }, []);
 
   return ( 
     <div className={`menu ${menuClick ? 'active' : ''}`}>

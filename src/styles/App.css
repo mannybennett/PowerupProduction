@@ -75,7 +75,7 @@ a, a:active, a:focus, a:hover {
   top: 52px;
   left: -100%;
   width: calc(100vw - 52px);
-  height: calc(100svh - 52px);
+  height: calc(var(--vh, 1vh) - 52px);
   z-index: 1;
   background-color: var(--slate-3);
   transition: all 0.5s ease-in-out;
@@ -226,9 +226,9 @@ a, a:active, a:focus, a:hover {
   font-weight: 400;
 }
 
-/* main {
-  padding: 65px 15px 15px;
-} */
+main {
+  margin-top: 52px;
+}
 
 .main-blur {
   filter: blur(3px);
