@@ -24,12 +24,11 @@
   align-items: center;
   overflow: hidden;
   width: 100%;
-  height: 100px;
   position: relative;
 }
 
 .animated-icon {
-  animation: slideInLeft 5s linear infinite;
+  animation: slideInLeft 1s linear infinite;
 }
 
 @keyframes slideInLeft {

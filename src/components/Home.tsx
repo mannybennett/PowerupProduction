@@ -47,15 +47,15 @@ const icons = [
 const Home = () => {
   return ( 
     <div className='home-container'>
-      <section className='welcome-box'>Welcome</section>
+      <section className='welcome-box'></section>
       <div className="animated-icons">
         {icons.map((icon) => {
           const IconComponent = iconComponents[icon.name];
           return (
             <IconComponent
-              size={30}
+              size={100}
               key={icon.name}
-              className={`animated-icon phos phos-${icon.name}`}
+              className='animated-icon'
               style={{ animationDelay: icon.delay }}
            />
           );

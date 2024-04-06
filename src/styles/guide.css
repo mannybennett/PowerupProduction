@@ -1,0 +1,6 @@
+@import '@radix-ui/colors/slate.css';
+@import '@radix-ui/colors/slate-dark.css';
+
+:root {
+  --blue: rgb(62, 94, 222);
+}
