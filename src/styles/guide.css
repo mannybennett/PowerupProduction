@@ -3,4 +3,109 @@
 
 :root {
   --blue: rgb(62, 94, 222);
+  --lightgrey: rgb(147,146,157);
+  --grey: rgb(39, 42, 45);
+  --fontSm: 13px; 
+  --fontMd: 15px;
+  --marginTB: 15px 0; 
+  --marginB: 15px; 
+}
+
+.guide-container {
+ padding: 15px;
+ line-height: 25px;
+}
+
+.name {
+  font-weight: 700;
+  margin-bottom: var(--marginB);
+}
+
+.main-text {
+  color: var(--slate-11);
+  font-weight: 500;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--slate-7);
+  margin: var(--marginTB);
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avi-container {
+  height: 40px;
+  width: 40px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.avi-image {
+  height: 40px;
+  width: 40px;
+}
+
+.avi-text {
+  line-height: 20px;
+}
+
+.author {
+  font-size: var(--fontMd);
+  font-weight: 500;
+}
+
+.numerics {
+  font-size: var(--fontSm);
+  color:var(--slate-11);
+}
+
+.genre-image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0 25px 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.tag {
+  font-weight: 700;
+}
+
+ol {
+  margin-left: 30px;
+}
+
+li > p {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.overview {
+  font-weight: 500;
+}
+
+.instrument {
+  color: var(--blue);
+  font-weight: 600;
+}
+
+.description {
+  display: flex;
+  gap: 15px;
+}
+
+.vert {
+  height: auto;
+  width: 3px;
+  background-color: var(--slate-11);
 }

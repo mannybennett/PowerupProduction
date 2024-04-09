@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'wouter';
 import './styles/App.css';
 import { Genre } from './types';
+import { ArrowSquareUpRight, GithubLogo } from '@phosphor-icons/react';
 import Menu from './components/Menu';
 import Header from './components/Header';
 import Home from './components/Home';
@@ -19,6 +20,8 @@ function App() {
   const [genre, setGenre] = useState<Genre>('Action/Adventure');
 
   const [location] = useLocation();
+
+  const genreArr: Genre[] = ['Action/Adventure', 'Puzzle', 'RPGs', 'Strategy', 'Horror', 'Platformers'];
 
   let page;
 
@@ -68,7 +71,19 @@ function App() {
         <main onClick={() => {menuClick && handleMenuClick()}} className={menuClick ? 'main-blur' : ''}>
           {page}
         </main>
-        <footer className={menuClick ? 'main-blur' : ''}></footer>
+        <footer className={menuClick ? 'main-blur' : ''}>
+          <section className='footer-genres'>
+            {genreArr.map(genre => {
+              return (
+                <p className='footer-genre'>{genre}</p>
+              )
+            })}
+          </section>
+          <section className='footer-logos'>
+            <ArrowSquareUpRight color='rgb(62, 94, 222)' size={28} weight="fill" />
+            <GithubLogo color='rgb(62, 94, 222)' size={27} />
+          </section>
+        </footer>
       </div>
     </div>
   );
