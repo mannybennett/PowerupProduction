@@ -20,7 +20,7 @@ export interface HeaderProps {
 };
 
 export interface HomeProps {
-  menuClick: boolean;
+  setGenre: (newValue: Genre) => void;
 };
 
 export interface GenreProps {

@@ -32,7 +32,7 @@ function App() {
   } else if (location === `/${genre.replace('/', '').toLowerCase()}`) {
     page = <Guide genre={genre} />
   } else {
-    page = <Home />;
+    page = <Home setGenre={setGenre} />;
   };
 
   const handleDropDown = () : void => {

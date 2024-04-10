@@ -37,7 +37,7 @@ const Guide = ({genre}: GenreProps) => {
         </div>
         <div className='avi-text'>
           <p className='author'>Manny Bennett</p>
-          <p className='numerics'>3 min read • April 5, 2024</p>
+          <p className='numerics'>2 min read • April 5, 2024</p>
         </div>
       </section>
       <div className='divider' />
